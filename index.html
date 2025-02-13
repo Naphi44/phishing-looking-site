@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            max-width: 420px;
+            text-align: center;
+            color: black;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+        .container input, .container select {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .container button {
+            width: 100%;
+            padding: 14px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        .ad-banner, .crypto-prompt, .contact-alert {
+            position: absolute;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            animation: pulse 1.5s infinite;
+        }
+        .ad-banner {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff0000, #ff6347);
+            color: white;
+        }
+        .crypto-prompt {
+            bottom: 40px;
+            left: 30px;
+            background: linear-gradient(135deg, #0000ff, #4682b4);
+            color: white;
+        }
+        .contact-alert {
+            top: 50%;
+            left: 10px;
+            background: linear-gradient(135deg, #ffff00, #ffd700);
+            color: black;
+        }
+        .chatbox {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #008000, #32cd32);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            animation: bounce 1.5s infinite;
+        }
+        .chatbox input {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form id="testForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <div class="crypto-prompt">
+        <p>🚀 Get free crypto! Send ETH to this address: <a href="#" style="color:white; text-decoration:underline;">0x123...456</a> 🚀</p>
+    </div>
+    
+    <div class="contact-alert">
+        <p>☎️ Call +123456789 for urgent account verification! ☎️</p>
+    </div>
+    
+    <div class="chatbox">
+        <h3>💬 Chat with us!</h3>
+        <p>Drop your email here for exclusive offers:</p>
+        <input type="email" placeholder="Enter your email">
+    </div>
+
+    <script>
+        document.getElementById("testForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Thank you for registering!");
+        });
+    </script>
+</body>
+</html>
